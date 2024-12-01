@@ -14,7 +14,7 @@ const Quiz = () => {
             <li>def myFunction {}</li>
         </ul>
         <button>Next</button>
-        <div className='index'></div>
+        <div className='index'>1 of 25 questions</div>
     </div>
   )
 }
