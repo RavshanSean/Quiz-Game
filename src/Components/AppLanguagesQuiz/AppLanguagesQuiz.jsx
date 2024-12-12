@@ -58,7 +58,6 @@ const AppLanguagesQuiz = () => {
 
     return (
         <div className='container'>
-            {/* Home Button */}
             <Link to="/">
                 <button className="home-btn">Go to Home</button>
             </Link>

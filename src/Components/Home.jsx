@@ -8,11 +8,15 @@ const Home = () => {
     <div className="home-container">
       <h1>Welcome to the Quiz App</h1>
       <Link to="/quiz">
-        <button className="start-btn">Dev Quiz</button>
+         <button className="start-btn">Dev Quiz</button>
       </Link>
       <Link to="/app-languages">
           <button className="start-btn">Apps and Languages Quiz</button>
-        </Link>
+      </Link>
+      <Link to="/css-quiz">
+         <button className="quiz-btn">CSS Quiz</button>
+      </Link>
+
     </div>
   );
 };
