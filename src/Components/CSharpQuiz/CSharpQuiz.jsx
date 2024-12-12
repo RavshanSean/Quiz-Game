@@ -1,11 +1,11 @@
 import React, { useRef, useState } from 'react';
-import './CssQuiz.css';
-import { cssQuizData } from '../../assets/cssQuizData';
-import { useNavigate, Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
+import './CSharpQuiz.css';
+import { csharpData } from '../../assets/csharpData';
 
-const CssQuiz = () => {
+const CSharpQuiz = () => {
   let [index, setIndex] = useState(0);
-  let [question, setQuestion] = useState(cssQuizData[index]);
+  let [question, setQuestion] = useState(csharpData[index]);
   let [lock, setLock] = useState(false);
   let [score, setScore] = useState(0);
   let [result, setResult] = useState(false);
@@ -16,8 +16,6 @@ const CssQuiz = () => {
   let Option4 = useRef(null);
 
   let option_array = [Option1, Option2, Option3, Option4];
-
-  const navigate = useNavigate();
 
   const checkAns = (e, ans) => {
     if (!lock) {
@@ -35,12 +33,12 @@ const CssQuiz = () => {
 
   const next = () => {
     if (lock) {
-      if (index === cssQuizData.length - 1) {
+      if (index === csharpData.length - 1) {
         setResult(true);
         return;
       }
       setIndex(prevIndex => prevIndex + 1);
-      setQuestion(cssQuizData[index + 1]);
+      setQuestion(csharpData[index + 1]);
       setLock(false);
       option_array.map((option) => {
         option.current.classList.remove('wrong');
@@ -52,7 +50,7 @@ const CssQuiz = () => {
 
   const reset = () => {
     setIndex(0);
-    setQuestion(cssQuizData[0]);
+    setQuestion(csharpData[0]);
     setScore(0);
     setLock(false);
     setResult(false);
@@ -63,7 +61,8 @@ const CssQuiz = () => {
       <Link to="/">
         <button className="home-btn">Go to Home</button>
       </Link>
-      <h1>CSS Quiz</h1>
+
+      <h1>C# Quiz</h1>
       <hr />
       {!result ? (
         <>
@@ -75,11 +74,11 @@ const CssQuiz = () => {
             <li ref={Option4} onClick={(e) => checkAns(e, 4)}>{question.option4}</li>
           </ul>
           <button onClick={next}>Next</button>
-          <div className='index'>{index + 1} of {cssQuizData.length} questions</div>
+          <div className='index'>{index + 1} of {csharpData.length} questions</div>
         </>
       ) : (
         <>
-          <h2>You Scored {score} out of {cssQuizData.length}</h2>
+          <h2>You Scored {score} out of {csharpData.length}</h2>
           <button onClick={reset}>Reset</button>
         </>
       )}
@@ -87,4 +86,4 @@ const CssQuiz = () => {
   );
 };
 
-export default CssQuiz;
+export default CSharpQuiz;

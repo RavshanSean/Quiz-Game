@@ -1,0 +1,42 @@
+.quiz-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .question-container {
+    margin-bottom: 20px;
+  }
+  
+  .options button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 200px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .options button:hover {
+    background-color: #45a049;
+  }
+  
+  .result {
+    margin-top: 20px;
+  }
+  
+  .home-btn {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .home-btn:hover {
+    background-color: #0056b3;
+  }
+  
