@@ -400,3 +400,4 @@ export const data = [
     ans: 3,
   },  
 ];
+

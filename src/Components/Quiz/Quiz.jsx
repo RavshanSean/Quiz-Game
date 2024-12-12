@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import './Quiz.css'
 import { data } from '../../assets/data';
+import { Link } from 'react-router-dom'
 
 const Quiz = () => {
 
@@ -59,6 +60,10 @@ const Quiz = () => {
 
   return (
     <div className='container'>
+        {/* Home Button */}
+      <Link to="/">
+        <button className="home-btn">Go to Home</button>
+      </Link>
         <h1>Quiz App</h1>
         <hr />
         {result?<></>:<>
