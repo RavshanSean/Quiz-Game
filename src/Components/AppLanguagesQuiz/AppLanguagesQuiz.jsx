@@ -1,11 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './AppLanguagesQuiz.css';
 import { appLanguagesData } from '../../assets/appLanguageDatas';
-import { Link } from 'react-router-dom';
 
 const AppLanguagesQuiz = () => {
     let [index, setIndex] = useState(0);
-    let [question, setQuestion] = useState(appLanguagesData[index]);
+    let [questions, setQuestions] = useState([]);  
+    let [question, setQuestion] = useState(null);  
     let [lock, setLock] = useState(false);
     let [score, setScore] = useState(0);
     let [result, setResult] = useState(false);
@@ -16,6 +17,17 @@ const AppLanguagesQuiz = () => {
     let Option4 = useRef(null);
 
     let option_array = [Option1, Option2, Option3, Option4];
+
+    const randomizeQuestions = () => {
+        const shuffled = [...appLanguagesData].sort(() => Math.random() - 0.5); 
+        return shuffled.slice(0, 50); 
+    };
+
+    useEffect(() => {
+        const randomized = randomizeQuestions();
+        setQuestions(randomized);  
+        setQuestion(randomized[0]); 
+    }, []); 
 
     const checkAns = (e, ans) => {
         if (!lock) {
@@ -33,12 +45,12 @@ const AppLanguagesQuiz = () => {
 
     const next = () => {
         if (lock) {
-            if (index === appLanguagesData.length - 1) {
+            if (index === questions.length - 1) {
                 setResult(true);
                 return;
             }
             setIndex(prevIndex => prevIndex + 1);
-            setQuestion(appLanguagesData[index + 1]);
+            setQuestion(questions[index + 1]); 
             setLock(false);
             option_array.map((option) => {
                 option.current.classList.remove('wrong');
@@ -49,8 +61,10 @@ const AppLanguagesQuiz = () => {
     };
 
     const reset = () => {
+        const randomized = randomizeQuestions(); 
         setIndex(0);
-        setQuestion(appLanguagesData[0]);
+        setQuestions(randomized); 
+        setQuestion(randomized[0]); 
         setScore(0);
         setLock(false);
         setResult(false);
@@ -65,19 +79,19 @@ const AppLanguagesQuiz = () => {
             <hr />
             {!result ? (
                 <>
-                    <h2>{index + 1}. {question.question}</h2>
+                    <h2>{index + 1}. {question?.question}</h2>
                     <ul>
-                        <li ref={Option1} onClick={(e) => checkAns(e, 1)}>{question.option1}</li>
-                        <li ref={Option2} onClick={(e) => checkAns(e, 2)}>{question.option2}</li>
-                        <li ref={Option3} onClick={(e) => checkAns(e, 3)}>{question.option3}</li>
-                        <li ref={Option4} onClick={(e) => checkAns(e, 4)}>{question.option4}</li>
+                        <li ref={Option1} onClick={(e) => checkAns(e, 1)}>{question?.option1}</li>
+                        <li ref={Option2} onClick={(e) => checkAns(e, 2)}>{question?.option2}</li>
+                        <li ref={Option3} onClick={(e) => checkAns(e, 3)}>{question?.option3}</li>
+                        <li ref={Option4} onClick={(e) => checkAns(e, 4)}>{question?.option4}</li>
                     </ul>
                     <button onClick={next}>Next</button>
-                    <div className='index'>{index + 1} of {appLanguagesData.length} questions</div>
+                    <div className='index'>{index + 1} of {questions.length} questions</div>
                 </>
             ) : (
                 <>
-                    <h2>You Scored {score} out of {appLanguagesData.length}</h2>
+                    <h2>You Scored {score} out of {questions.length}</h2>
                     <button onClick={reset}>Reset</button>
                 </>
             )}
@@ -86,4 +100,3 @@ const AppLanguagesQuiz = () => {
 };
 
 export default AppLanguagesQuiz;
-
