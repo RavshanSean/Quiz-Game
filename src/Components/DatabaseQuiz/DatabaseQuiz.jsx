@@ -1,11 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './DatabaseQuiz.css';
 import { databaseData } from '../../assets/databaseData';
 
 const DatabaseQuiz = () => {
   let [index, setIndex] = useState(0);
-  let [question, setQuestion] = useState(databaseData[index]);
+  let [questions, setQuestions] = useState([]);  
+  let [question, setQuestion] = useState(null);  
   let [lock, setLock] = useState(false);
   let [score, setScore] = useState(0);
   let [result, setResult] = useState(false);
@@ -16,6 +17,18 @@ const DatabaseQuiz = () => {
   let Option4 = useRef(null);
 
   let option_array = [Option1, Option2, Option3, Option4];
+
+ 
+  const randomizeQuestions = () => {
+    const shuffled = [...databaseData].sort(() => Math.random() - 0.5); 
+    return shuffled.slice(0, 50); 
+  };
+
+  useEffect(() => {
+    const randomized = randomizeQuestions();
+    setQuestions(randomized);  
+    setQuestion(randomized[0]); 
+  }, []); 
 
   const checkAns = (e, ans) => {
     if (!lock) {
@@ -33,12 +46,12 @@ const DatabaseQuiz = () => {
 
   const next = () => {
     if (lock) {
-      if (index === databaseData.length - 1) {
+      if (index === questions.length - 1) {
         setResult(true);
         return;
       }
       setIndex(prevIndex => prevIndex + 1);
-      setQuestion(databaseData[index + 1]);
+      setQuestion(questions[index + 1]); 
       setLock(false);
       option_array.map((option) => {
         option.current.classList.remove('wrong');
@@ -49,8 +62,10 @@ const DatabaseQuiz = () => {
   };
 
   const reset = () => {
+    const randomized = randomizeQuestions(); 
     setIndex(0);
-    setQuestion(databaseData[0]);
+    setQuestions(randomized); 
+    setQuestion(randomized[0]); 
     setScore(0);
     setLock(false);
     setResult(false);
@@ -66,19 +81,19 @@ const DatabaseQuiz = () => {
       <hr />
       {!result ? (
         <>
-          <h2>{index + 1}. {question.question}</h2>
+          <h2>{index + 1}. {question?.question}</h2>
           <ul>
-            <li ref={Option1} onClick={(e) => checkAns(e, 1)}>{question.option1}</li>
-            <li ref={Option2} onClick={(e) => checkAns(e, 2)}>{question.option2}</li>
-            <li ref={Option3} onClick={(e) => checkAns(e, 3)}>{question.option3}</li>
-            <li ref={Option4} onClick={(e) => checkAns(e, 4)}>{question.option4}</li>
+            <li ref={Option1} onClick={(e) => checkAns(e, 1)}>{question?.option1}</li>
+            <li ref={Option2} onClick={(e) => checkAns(e, 2)}>{question?.option2}</li>
+            <li ref={Option3} onClick={(e) => checkAns(e, 3)}>{question?.option3}</li>
+            <li ref={Option4} onClick={(e) => checkAns(e, 4)}>{question?.option4}</li>
           </ul>
           <button onClick={next}>Next</button>
-          <div className='index'>{index + 1} of {databaseData.length} questions</div>
+          <div className='index'>{index + 1} of {questions.length} questions</div>
         </>
       ) : (
         <>
-          <h2>You Scored {score} out of {databaseData.length}</h2>
+          <h2>You Scored {score} out of {questions.length}</h2>
           <button onClick={reset}>Reset</button>
         </>
       )}
