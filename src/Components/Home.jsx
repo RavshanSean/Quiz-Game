@@ -11,7 +11,7 @@ const Home = () => {
          <button className="button">Developer Quiz</button>
       </Link>
       <Link to="/app-languages">
-          <button className="button">Programming Languages Quiz</button>
+          <button className="button">Languages Quiz</button>
       </Link>
       <Link to="/css-quiz">
          <button className="button">CSS Quiz</button>
