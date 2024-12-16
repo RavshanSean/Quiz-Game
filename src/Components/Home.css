@@ -2,9 +2,10 @@
 body {
   background-color: black;
   color: #00ff00; 
-  font-family: "Press Start 2P", monospace; 
+  font-family: 'Doto', sans-serif; 
   margin: 0;
   overflow: hidden;
+  
 }
 
 
@@ -33,31 +34,35 @@ body::after {
   justify-content: center;
   min-height: 100vh;
   z-index: 2;
+  
 }
 
 
 h1, .text {
   color: #5bfc5b;
-  font-size: 2rem;
+  font-size: 3rem;
   text-transform: uppercase;
   text-shadow: 0 0 5px #e1dada, 0 0 10px #666565;
   padding: 10px;
   margin-bottom: 20px;
   
+  
 }
 
 
 .button {
-  background: rgb(0, 246, 62);
-  color: #757975;
+  background: rgb(65, 248, 111);
+  color: #000000;
   border: 2px solid #00ff00;
-  padding: 10px 20px;
+  padding: 15px 40px;
   margin: 10px;
   font-size: 1rem;
-  font-family: "Press Start 2P", monospace;
   cursor: pointer;
   text-transform: uppercase;
   box-shadow: 0 0 10px #00ff00;
+  font-family: 'Doto', sans-serif;
+  
+  
 }
 
 .button:hover {

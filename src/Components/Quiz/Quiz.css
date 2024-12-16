@@ -14,7 +14,7 @@
 
 h1, .quiz {
     color: #0aec34;
-    text-shadow: 0 0 5px #040404, 0 0 10px #090909;
+    text-shadow: 0 0 5px #000000, 0 0 10px #037712;
 }
 
 .container hr {
@@ -69,3 +69,17 @@ h1, .quiz {
     border-color: #f57207;
 
 }
+
+.container button:hover {
+    background-color: #03ef0f;
+    color: #026814;
+}
+
+
+.container ul li:hover {
+    
+  
+    border-color: #02f53f;
+    text-shadow: 0 0 10px #0af735;
+}
+

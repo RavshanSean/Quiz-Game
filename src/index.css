@@ -5,6 +5,14 @@
 body{
 height: 100vh;
 background-image: linear-gradient(#000000, #000000);
-font-family: 'poppins';
-
+font-family: 'Doto', sans-serif;
 }
+
+
+h1, p {
+  font-family: 'Doto', sans-serif;
+  
+}
+
+
+
