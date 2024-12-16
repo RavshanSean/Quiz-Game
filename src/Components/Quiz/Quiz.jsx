@@ -76,7 +76,7 @@ const Quiz = () => {
         <button className="home-btn">Go to Home</button>
       </Link>
 
-      <h1>Quiz App</h1>
+      <h1 className='quiz'>Quiz App</h1>
       <hr />
       {!result ? (
         <>

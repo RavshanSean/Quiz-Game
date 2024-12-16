@@ -2,24 +2,31 @@
     width: 640px;
     margin: auto;
     margin-top: 150px;
-    background: white;
-    color: #262626;
+    background: rgb(7, 7, 7);
+    color: #3fe408;
     display: flex;
     flex-direction: column;
     gap: 20px;
     border-radius: 10px;
     padding: 40px 50px;
+    box-shadow: 0 0 5px #04ee27, 0 0 10px #02ff34;
+}
+
+h1, .quiz {
+    color: #0aec34;
+    text-shadow: 0 0 5px #040404, 0 0 10px #090909;
 }
 
 .container hr {
     height: 2px;
     border: none;
-    background: #707070;
+    background: #2cd823;
 }
 
 .container h2 {
     font-size: 27px;
     font-weight: 500;
+   
 }
 
 .container ul li {
@@ -27,19 +34,20 @@
     align-items: center;
     height: 70px;
     padding-left: 15px;
-    border: 1px solid #686868;
+    border: 1px solid #065d0a;
     border-radius: 8px;
     margin-bottom: 20px;
     font-size: 20px;
     cursor: pointer;
+    background-color: #060606;
 }
 
 .container button {
     margin: auto;
     width: 250px;
     height: 65px;
-    background: #553f9a;
-    color: #fff;
+    background: #026814;
+    color: #03ef0f;
     font-size: 25px;
     font-weight: 500;
     border-radius: 8px;
@@ -52,11 +60,12 @@
 }
 
 .container .correct {
-    background: #dffff2;
-    border-color: #00d369;
+    background: #09e805;
+    border-color: #02f53f;
 }
 
 .container .wrong {
-    background: #f8c7bf;
-    border-color: #d30000;
+    background: #fc6703;
+    border-color: #f57207;
+
 }

@@ -6,30 +6,30 @@ import './Home.css';
 const Home = () => {
   return (
     <div className="home-container">
-      <h1>Welcome to the Quiz App</h1>
+      <h1 className='text'>Welcome to the Quiz App</h1>
       <Link to="/quiz">
-         <button className="start-btn">Developer Quiz</button>
+         <button className="button">Developer Quiz</button>
       </Link>
       <Link to="/app-languages">
-          <button className="start-btn">Programming Languages Quiz</button>
+          <button className="button">Programming Languages Quiz</button>
       </Link>
       <Link to="/css-quiz">
-         <button className="quiz-btn">CSS Quiz</button>
+         <button className="button">CSS Quiz</button>
       </Link>
       <Link to="/html-quiz">
-         <button className="quiz-btn">Html Quiz</button>
+         <button className="button">Html Quiz</button>
       </Link>
       <Link to="/javascript-quiz">
-         <button className="quiz-btn">JavaScript Quiz</button>
+         <button className="button">JavaScript Quiz</button>
       </Link>
       <Link to="/python-quiz">
-         <button className="quiz-btn">Python Quiz</button>
+         <button className="button">Python Quiz</button>
       </Link>
       <Link to="/database-quiz">
-         <button className="quiz-btn">Database Quiz</button>
+         <button className="button">Database Quiz</button>
       </Link>
       <Link to="/csharp-quiz">
-        <button className="quiz-btn">C# Quiz</button>
+        <button className="button">C# Quiz</button>
       </Link>
 
     </div>
