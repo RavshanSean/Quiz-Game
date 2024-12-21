@@ -2,31 +2,66 @@
     width: 640px;
     margin: auto;
     margin-top: 150px;
-    background: rgb(7, 7, 7);
+    background: rgb(2, 135, 29);
     color: #3fe408;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    border-radius: 10px;
+    border-radius: 50px;
     padding: 40px 50px;
-    box-shadow: 0 0 5px #04ee27, 0 0 10px #02ff34;
+    box-shadow: 0 0 5px #02f326, 0 0 10px #02ff34;
+   
 }
 
-h1, .quiz {
+h1.quiz {
     color: #0aec34;
     text-shadow: 0 0 5px #000000, 0 0 10px #037712;
+    position: absolute; 
+    top: 10%;      
+    right: 10%;      
+    margin: 0;         
 }
 
-.container hr {
-    height: 2px;
-    border: none;
-    background: #2cd823;
+.container .question-container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #101010;
+    box-shadow: 0 0 5px #04ee27, 0 0 10px #02ff34;
+    position: relative;
+    top: 10%;
+    left: 60%;
+    
+    
 }
-
-.container h2 {
-    font-size: 27px;
-    font-weight: 500;
+.container .question-container::before {
+    content: '';
+    position: absolute;
+    left: -20px; 
+    top: 50%;
+    transform: translateY(-50%); 
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 20px solid #101010; 
    
+}
+
+.container .options-container {
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #101010;
+    box-shadow: 0 0 5px #04ee27, 0 0 10px #02ff34;
+    position: relative;
+    top: 10%;
+    left: 60%;
+  
+}
+
+.container ul {
+    list-style: none;
+    padding: 0;
 }
 
 .container ul li {
@@ -40,23 +75,34 @@ h1, .quiz {
     font-size: 20px;
     cursor: pointer;
     background-color: #060606;
+    transition: all 0.3s;
+}
+
+.container ul li:hover {
+    border-color: #02f53f;
+    text-shadow: 0 0 10px #0af735;
 }
 
 .container button {
+    border: 5px solid #08f914;
     margin: auto;
-    width: 250px;
+    width: 40%;
     height: 65px;
-    background: #026814;
+    background: #000000;
     color: #03ef0f;
-    font-size: 25px;
+    font-size: 130%;
     font-weight: 500;
-    border-radius: 8px;
+    border-radius: 18px;
     cursor: pointer;
+    position: relative;
+    top: 10%;
+    left: 30%;
 }
 
 .container .index {
-    margin: auto;
-    font-size: 18px;
+    position: absolute;
+    top: 16%;
+    right: 12%;
 }
 
 .container .correct {
@@ -67,7 +113,6 @@ h1, .quiz {
 .container .wrong {
     background: #fc6703;
     border-color: #f57207;
-
 }
 
 .container button:hover {
@@ -76,10 +121,130 @@ h1, .quiz {
 }
 
 
-.container ul li:hover {
-    
+.container::before {
+    content: '';
+    position: absolute;
+    top: 8%; 
+    left: 20%; 
+    width: 30%;
+    height: 20%; 
+    background: url('../../assets/tata.webp') no-repeat center center / cover;
+    box-shadow: 0 0 5px #04ee27, 0 0 10px #02ff34; 
+    z-index: 1;
+    border-radius: 40px;
+   
+}
+
+html, body {
+    overflow: hidden;
+    height: 100%; 
+    margin: 0; 
+}
+
+
+.container .heart {
+    position: absolute;
+    bottom: 25%;
+    right: 50%;
+    width: 10%;  
+    height: 10%; 
+    background: url('../../assets/heart.gif') no-repeat center center / cover;
+    z-index: 2;
+    box-shadow: 0 0 5px #04ee27, 0 0 10px #02ff34; 
+    border-radius: 10px;
+  }
   
+  
+  .container .radar {
+    position: absolute;
+    bottom: 45%;
+    right: 51%;
+    width: 10%;  
+    height: 20%; 
+    background: url('../../assets/radar.gif') no-repeat center center / cover;
+    z-index: 2;
+    box-shadow: 0 0 5px #04ee27, 0 0 10px #02ff34; 
+    border-radius: 50%;
+  }
+
+
+  .container .options-container {
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #101010;
+    box-shadow: 0 0 5px #04ee27, 0 0 10px #02ff34;
+    position: relative;
+    top: 10%;
+    left: 60%;
+    opacity: 0; 
+    transition: opacity 1s ease; 
+  }
+  
+  .container .options-container.show {
+    opacity: 1; 
+  }
+  
+  .container ul li {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    padding-left: 15px;
+    border: 1px solid #065d0a;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #060606;
+    transition: all 0.5s;
+    opacity: 0;
+    transform: scale(0.9); 
+  }
+  
+  .container ul li.show {
+    opacity: 1; 
+    transform: scale(1); 
+  }
+  
+  .container ul li:hover {
     border-color: #02f53f;
     text-shadow: 0 0 10px #0af735;
+  }
+  
+
+  .container .options-container {
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #101010;
+    box-shadow: 0 0 5px #04ee27, 0 0 10px #02ff34;
+    position: relative;
+    top: 10%;
+    left: 60%;
+    opacity: 0; 
+    transition: opacity 1s ease;
+}
+
+.container .options-container.show {
+    opacity: 1;
+}
+
+.container ul li {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    padding-left: 15px;
+    border: 1px solid #065d0a;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #060606;
+    transition: all 0.5s;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.container ul li.show {
+    opacity: 1;
+    transform: scale(1);
 }
 

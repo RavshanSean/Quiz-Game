@@ -3,7 +3,7 @@ body {
   color: #00ff00; 
   font-family: 'Doto', sans-serif; 
   margin: 0;
-  overflow: hidden;
+ 
 }
 
 body::after {
@@ -31,7 +31,7 @@ body::after {
   min-height: 100vh;
   padding-left: 20px; 
   z-index: 2;
-  background-image: url(pic.jpg);
+  background-image: url(src/assets/pic.jpg);
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat;
@@ -82,3 +82,9 @@ h1, .text {
   border-radius: 20px;
   box-shadow: 0 0 10px #20fe03;
 }
+
+
+
+
+
+
