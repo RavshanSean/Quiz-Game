@@ -4,6 +4,10 @@ import './Quiz.css';
 import { data } from '../../assets/data';
 import DigitalClock from '../../assets/DigitalClock';
 
+import Weather from '../../assets/weather'; 
+
+
+
 const Quiz = () => {
   let [index, setIndex] = useState(0);
   let [questions, setQuestions] = useState([]);
@@ -114,6 +118,8 @@ const Quiz = () => {
         <button className="home-btn">Go to Home</button>
       </Link>
       <h1 className="quiz"><DigitalClock /></h1>
+      <h1 className="quiz"><Weather /></h1>
+
       {!result ? (
         <>
           <div className="question-container">
