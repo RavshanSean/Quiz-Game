@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Quiz.css';
 import { data } from '../../assets/data';
+import DigitalClock from '../../assets/DigitalClock';
 
 const Quiz = () => {
   let [index, setIndex] = useState(0);
@@ -112,7 +113,7 @@ const Quiz = () => {
       <Link to="/">
         <button className="home-btn">Go to Home</button>
       </Link>
-      <h1 className="quiz">Quiz App</h1>
+      <h1 className="quiz"><DigitalClock /></h1>
       {!result ? (
         <>
           <div className="question-container">
