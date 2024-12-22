@@ -1,93 +1,57 @@
 .container {
-    width: 640px;
+    width: 35%;
     margin: auto;
-    margin-top: 150px;
-    background: rgb(2, 135, 29);
+    margin-top: 10%;
+    background: rgb(1, 85, 18);
     color: #3fe408;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    border-radius: 50px;
-    padding: 40px 50px;
+    gap: 25px;
+    border-radius: 48px;
+    padding: 5% 6%;
     box-shadow: 0 0 5px #02f326, 0 0 10px #02ff34;
-   
+    
 }
 
 h1.quiz {
     color: #0aec34;
     text-shadow: 0 0 5px #000000, 0 0 10px #037712;
     position: absolute; 
-    top: 10%;      
-    right: 10%;      
+    top: 5%;      
+    right: 8%;      
     margin: 0;         
 }
 
 .container .question-container {
     text-align: center;
-    padding: 20px;
-    border-radius: 15px;
+    padding: 5%;
+    border-radius: 20px;
     background-color: #101010;
     box-shadow: 0 0 5px #04ee27, 0 0 10px #02ff34;
     position: relative;
-    top: 10%;
+    top: 5%;
     left: 60%;
     
-    
 }
+
 .container .question-container::before {
     content: '';
     position: absolute;
-    left: -20px; 
+    left: -5%;
     top: 50%;
     transform: translateY(-50%); 
     width: 0;
     height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right: 20px solid #101010; 
-   
-}
-
-.container .options-container {
-    padding: 20px;
-    border-radius: 15px;
-    background-color: #101010;
-    box-shadow: 0 0 5px #04ee27, 0 0 10px #02ff34;
-    position: relative;
-    top: 10%;
-    left: 60%;
-  
-}
-
-.container ul {
-    list-style: none;
-    padding: 0;
-}
-
-.container ul li {
-    display: flex;
-    align-items: center;
-    height: 70px;
-    padding-left: 15px;
-    border: 1px solid #065d0a;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #060606;
-    transition: all 0.3s;
-}
-
-.container ul li:hover {
-    border-color: #02f53f;
-    text-shadow: 0 0 10px #0af735;
+    border-top: 2% solid transparent;
+    border-bottom: 2% solid transparent;
+    border-right: 5% solid #101010; 
 }
 
 .container button {
     border: 2px solid #23ff02;
     margin: auto;
     width: 40%;
-    height: 65px;
+    height: 10%;
     background: #000000;
     color: #03ef0f;
     font-size: 130%;
@@ -95,13 +59,24 @@ h1.quiz {
     border-radius: 18px;
     cursor: pointer;
     position: relative;
-    top: 10%;
-    left: 30%;
+
+}
+
+.home-btn {
+    position: relative;
+    right: 91%;
+    bottom: 215px;
+}
+
+.next-btn {
+    position: relative;
+    left: 32%;
+    top: 35px;
 }
 
 .container .index {
     position: absolute;
-    top: 16%;
+    top: 10%;
     right: 12%;
 }
 
@@ -120,104 +95,50 @@ h1.quiz {
     color: #026814;
 }
 
-
 .container::before {
     content: '';
     position: absolute;
     top: 8%; 
-    left: 20%; 
-    width: 30%;
-    height: 20%; 
+    left: 5%; 
+    width: 45%;
+    height: 45%; 
     background: url('../../assets/tata.webp') no-repeat center center / cover;
     box-shadow: 0 0 5px #04ee27, 0 0 10px #02ff34; 
     z-index: 1;
     border-radius: 40px;
-   
 }
-
-html, body {
-    overflow: hidden;
-    height: 100%; 
-    margin: 0; 
-}
-
 
 .container .heart {
     position: absolute;
-    bottom: 25%;
-    right: 50%;
+    bottom: 10%;
+    right: 15%;
     width: 10%;  
     height: 10%; 
     background: url('../../assets/heart.gif') no-repeat center center / cover;
     z-index: 2;
     box-shadow: 0 0 5px #04ee27, 0 0 10px #02ff34; 
     border-radius: 10px;
-  }
-  
-  
-  .container .radar {
+}
+
+.container .radar {
     position: absolute;
-    bottom: 45%;
-    right: 51%;
-    width: 10%;  
-    height: 20%; 
+    bottom: 15%;
+    right: 50%;
+    width: 15%;  
+    height: 25%; 
     background: url('../../assets/radar.gif') no-repeat center center / cover;
     z-index: 2;
     box-shadow: 0 0 5px #04ee27, 0 0 10px #02ff34; 
-    border-radius: 50%;
-  }
+    border-radius: 40px;
+}
 
-
-  .container .options-container {
-    padding: 20px;
-    border-radius: 15px;
+.container .options-container {
+    padding: 5%;
+    border-radius: 28px;
     background-color: #101010;
     box-shadow: 0 0 5px #04ee27, 0 0 10px #02ff34;
     position: relative;
-    top: 10%;
-    left: 60%;
-    opacity: 0; 
-    transition: opacity 1s ease; 
-  }
-  
-  .container .options-container.show {
-    opacity: 1; 
-  }
-  
-  .container ul li {
-    display: flex;
-    align-items: center;
-    height: 70px;
-    padding-left: 15px;
-    border: 1px solid #065d0a;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #060606;
-    transition: all 0.5s;
-    opacity: 0;
-    transform: scale(0.9); 
-  }
-  
-  .container ul li.show {
-    opacity: 1; 
-    transform: scale(1); 
-  }
-  
-  .container ul li:hover {
-    border-color: #02f53f;
-    text-shadow: 0 0 10px #0af735;
-  }
-  
-
-  .container .options-container {
-    padding: 20px;
-    border-radius: 15px;
-    background-color: #101010;
-    box-shadow: 0 0 5px #04ee27, 0 0 10px #02ff34;
-    position: relative;
-    top: 10%;
+    top: 5%;
     left: 60%;
     opacity: 0; 
     transition: opacity 1s ease;
@@ -230,55 +151,70 @@ html, body {
 .container ul li {
     display: flex;
     align-items: center;
-    height: 70px;
-    padding-left: 15px;
-    border: 1px solid #065d0a;
+    padding-left: 3%;
+    border: 1% solid #065d0a;
     border-radius: 8px;
-    margin-bottom: 20px;
-    font-size: 20px;
+    margin-bottom: 5%;
+    font-size: 120%;
     cursor: pointer;
     background-color: #060606;
     transition: all 0.5s;
     opacity: 0;
     transform: scale(0.9);
+    width: 92%;
+    
 }
 
 .container ul li.show {
     opacity: 1;
     transform: scale(1);
+    
 }
 
 .weather-container {
-    padding: 10px;
+    padding: 2%;
     background-color: rgb(0, 0, 0);
     color: rgb(6, 247, 58);
     width: 15%;
     position: fixed;
-    bottom: 40%;  
-    left: 10%;    
+    bottom: 10%;  
+    left: 9%;    
     height: 15%;
-    border-radius: 30px;
+    border-radius: 15px;
     box-shadow: 0 0 5px #04ee27, 0 0 10px #02ff34;
     font-family: 'Doto', sans-serif; 
-  }
+}
 
-  .blinking-colon {
-    animation: blink 1s infinite step-start;
-  }
-  
-  @keyframes blink {
-    50% {
-      opacity: 0;
-    }
-  }
-  
-  .loading {
+.weather-container h2 {
+    margin: 0;
+    font-size: 30%;
+}
+
+.weather-container p {
+    margin: 8% 0;
+    font-size: 30%;
+}
+
+.container .question-container::before {
+    content: '';
+    position: absolute;
+    left: -20px; 
+    top: 50%;
+    transform: translateY(-50%); 
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 20px solid #101010; 
+}
+
+.loading {
     padding: 10px;
     background-color: rgb(0, 0, 0);
     color: rgb(6, 247, 58);
     width: 15%;
     position: fixed;
-    bottom: 40%;
+    bottom: 20%;
     left: 10%;
     height: 15%;
     font-family: 'Doto', sans-serif;
@@ -288,26 +224,30 @@ html, body {
   }
   
   .loading p {
-    font-size: 50%;
+    font-size: 30%;
     margin: 0;
   }
-  
 
-  
-  .weather-container h2 {
-    margin: 0;
-    font-size: 50%;
-    
+.blinking-colon {
+    animation: blink 1s infinite step-start;
   }
-  
-  .weather-container p {
-    margin: 5% 0;
-    font-size: 50%;
-  }
-  
- 
 
-  
- 
-  
-  
+@keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .container button:hover {
+    background-color: #03ef0f;
+    color: #026814;
+}
+
+.container ul li:hover {
+    border-color: #02f53f;
+    box-shadow: 0 0 10px #0af735;
+}
+
+.container ul li {
+    transition: all 0.5s ease;
+}

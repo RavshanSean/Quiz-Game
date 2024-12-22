@@ -114,9 +114,6 @@ const Quiz = () => {
     <div className="container">
       <div className="heart"></div>
       <div className="radar"></div>
-      <Link to="/">
-        <button className="home-btn">Go to Home</button>
-      </Link>
       <h1 className="quiz"><DigitalClock /></h1>
       <h1 className="quiz"><Weather /></h1>
 
@@ -142,7 +139,10 @@ const Quiz = () => {
             </ul>
           </div>
 
-          <button onClick={next}>Next</button>
+          <button className='next-btn' onClick={next}>Next</button>
+          <Link to="/">
+        <button className="home-btn">Go to Home</button>
+           </Link>
           <div className="index">
             {index + 1} of {questions.length} questions
           </div>
@@ -152,7 +152,7 @@ const Quiz = () => {
           <h2>
             You Scored {score} out of {questions.length}
           </h2>
-          <button onClick={reset}>Reset</button>
+          <button className='reset-btn' onClick={reset}>Reset</button>
         </>
       )}
     </div>
