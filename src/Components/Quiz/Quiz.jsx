@@ -112,6 +112,10 @@ const Quiz = () => {
 
   return (
     <div className="container">
+      <Link to="/">
+          <button className="home-btn">Go to Home</button>
+           </Link>
+           <button className='next-btn' onClick={next}>Next</button>
       <div className="heart"></div>
       <div className="radar"></div>
       <h1 className="quiz"><DigitalClock /></h1>
@@ -138,11 +142,7 @@ const Quiz = () => {
               </li>
             </ul>
           </div>
-
-          <button className='next-btn' onClick={next}>Next</button>
-          <Link to="/">
-        <button className="home-btn">Go to Home</button>
-           </Link>
+          
           <div className="index">
             {index + 1} of {questions.length} questions
           </div>

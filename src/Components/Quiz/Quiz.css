@@ -1,5 +1,4 @@
 .container {
-    width: 35%;
     margin: auto;
     margin-top: 10%;
     background: rgb(1, 85, 18);
@@ -7,8 +6,7 @@
     display: flex;
     flex-direction: column;
     gap: 25px;
-    border-radius: 48px;
-    padding: 5% 6%;
+    border-radius: 38px;
     box-shadow: 0 0 5px #02f326, 0 0 10px #02ff34;
     
 }
@@ -29,7 +27,7 @@ h1.quiz {
     background-color: #101010;
     box-shadow: 0 0 5px #04ee27, 0 0 10px #02ff34;
     position: relative;
-    top: 5%;
+    bottom: 100px;
     left: 60%;
     
 }
@@ -50,28 +48,28 @@ h1.quiz {
 .container button {
     border: 2px solid #23ff02;
     margin: auto;
-    width: 40%;
-    height: 10%;
+    width: 35%;
+    height: 50px;
     background: #000000;
     color: #03ef0f;
     font-size: 130%;
     font-weight: 500;
-    border-radius: 18px;
+    border-radius: 100px;
     cursor: pointer;
     position: relative;
 
 }
 
 .home-btn {
-    position: relative;
-    right: 91%;
-    bottom: 215px;
+    right: 105%;
+    top: 300px;
+   
 }
 
 .next-btn {
-    position: relative;
-    left: 32%;
-    top: 35px;
+    left: 27%;
+    bottom: 120px;
+    
 }
 
 .container .index {
@@ -101,7 +99,7 @@ h1.quiz {
     top: 8%; 
     left: 5%; 
     width: 45%;
-    height: 45%; 
+    height: 40%; 
     background: url('../../assets/tata.webp') no-repeat center center / cover;
     box-shadow: 0 0 5px #04ee27, 0 0 10px #02ff34; 
     z-index: 1;
@@ -110,8 +108,8 @@ h1.quiz {
 
 .container .heart {
     position: absolute;
-    bottom: 10%;
-    right: 15%;
+    bottom: 3%;
+    right: 5%;
     width: 10%;  
     height: 10%; 
     background: url('../../assets/heart.gif') no-repeat center center / cover;
@@ -122,7 +120,7 @@ h1.quiz {
 
 .container .radar {
     position: absolute;
-    bottom: 15%;
+    bottom: 24%;
     right: 50%;
     width: 15%;  
     height: 25%; 
@@ -138,7 +136,7 @@ h1.quiz {
     background-color: #101010;
     box-shadow: 0 0 5px #04ee27, 0 0 10px #02ff34;
     position: relative;
-    top: 5%;
+    bottom: 55px;
     left: 60%;
     opacity: 0; 
     transition: opacity 1s ease;
@@ -162,6 +160,7 @@ h1.quiz {
     opacity: 0;
     transform: scale(0.9);
     width: 92%;
+    box-shadow: 0 0 5px #04ee27;
     
 }
 
@@ -238,16 +237,23 @@ h1.quiz {
     }
   }
 
-  .container button:hover {
+.container button:hover {
     background-color: #03ef0f;
     color: #026814;
 }
 
 .container ul li:hover {
     border-color: #02f53f;
-    box-shadow: 0 0 10px #0af735;
+    box-shadow: 0 0 10px #82f797;
 }
 
 .container ul li {
     transition: all 0.5s ease;
+}
+
+@media screen and (min-width: 1400px) {
+    .container {
+        width: 30%;
+        max-width: 1200px;
+    }
 }
