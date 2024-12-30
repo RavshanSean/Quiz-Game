@@ -1,0 +1,188 @@
+
+.background-images-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden; 
+}
+
+body {
+    background: url('/src/assets/third.gif') no-repeat center center fixed;
+    
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+  }
+
+
+.background-image {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: auto;
+    animation: moveBackground 10s ease-in-out infinite;
+}
+
+
+.first-image {
+    left: 0;
+    width: 50%;
+    z-index: -1;
+    object-fit: fit;
+    filter: drop-shadow(1px 1px 20px rgb(247, 81, 108));
+    animation: firstImageMovement 15s ease-in-out infinite; 
+}
+
+
+.second-image {
+    right: 0;
+    width: 50%;
+    z-index: -1;
+    object-fit: fit;
+    filter: drop-shadow(1px 1px 20px rgb(244, 94, 119));
+    animation: secondImageMovement 15s ease-in-out infinite; 
+}
+
+
+.background-5 {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    filter: drop-shadow(1px 1px 20px rgb(58, 4, 235));
+}
+
+
+.background-city {
+    position: absolute;
+    width: 75%;
+    height: 70%;
+    object-fit: cover;
+    top: 38%;
+    animation: cityMovement 12s ease-in-out infinite; 
+}
+
+
+@keyframes moveBackground {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(0, -30px, 0); 
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes firstImageMovement {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1); 
+    }
+    50% {
+        transform: translate3d(0, -10px, 0) scale(1.1); 
+    }
+    100% {
+        transform: translate3d(0, 0, 0) scale(1); 
+    }
+}
+
+@keyframes secondImageMovement {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+        transform: translate3d(0, -10px, 0) scale(1.1); 
+    }
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+@keyframes cityMovement {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(0, 20px, 0); 
+    }
+    100% {
+        transform: translate3d(0, 0, 0); 
+    }
+}
+
+
+.css-question-box {
+    background-color: #1a1a1a;
+    border: 3px solid #ff00cc;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: left;
+    box-shadow: 0px 4px 8px rgba(0, 255, 255, 0.3); 
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    left: 40%;
+    transform: translateX(-50%);
+    margin-top: 4%;
+}
+
+.css-question {
+    font-size: 1.5rem;
+    color: #f85ef8; 
+    font-family: 'Doto', sans-serif;
+   
+    letter-spacing: 1px;
+}
+
+.css-option {
+    background-color: #121112;
+    border: 3px solid #ff00cc;
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 10px;
+    text-align: left;
+    font-size: 1.4rem;
+    color: #f85ef8;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%;
+    position: relative;
+    font-weight: 700;
+}
+
+.css-options {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    width: 20%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    position: relative;
+    left: 57%; 
+}
+
+.css-option:hover {
+    background-color: #101010;
+    transform: scale(1.05);
+}
+
+.correct-answer {
+    background-color: #66ff66 !important;
+    border-color: #00ff00 !important;
+}
+
+.wrong-answer {
+    background-color: #fa013f !important;
+    border-color: #ff0066 !important;
+}

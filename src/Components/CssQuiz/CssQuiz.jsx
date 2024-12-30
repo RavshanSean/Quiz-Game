@@ -4,95 +4,102 @@ import { cssQuizData } from '../../assets/cssQuizData';
 import { Link } from 'react-router-dom'; 
 
 const CssQuiz = () => {
-  let [index, setIndex] = useState(0);
-  let [questions, setQuestions] = useState([]);  
-  let [question, setQuestion] = useState(null);  
-  let [lock, setLock] = useState(false);
-  let [score, setScore] = useState(0);
-  let [result, setResult] = useState(false);
+  let [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  let [quizQuestions, setQuizQuestions] = useState([]);  
+  let [currentQuestion, setCurrentQuestion] = useState(null);  
+  let [isLocked, setIsLocked] = useState(false);
+  let [quizScore, setQuizScore] = useState(0);
+  let [showResult, setShowResult] = useState(false);
 
-  let Option1 = useRef(null);
-  let Option2 = useRef(null);
-  let Option3 = useRef(null);
-  let Option4 = useRef(null);
+  let optionOneRef = useRef(null);
+  let optionTwoRef = useRef(null);
+  let optionThreeRef = useRef(null);
+  let optionFourRef = useRef(null);
 
-  let option_array = [Option1, Option2, Option3, Option4];
+  let optionsRefs = [optionOneRef, optionTwoRef, optionThreeRef, optionFourRef];
 
-  const randomizeQuestions = () => {
+  const shuffleQuestions = () => {
     const shuffled = [...cssQuizData].sort(() => Math.random() - 0.5); 
     return shuffled.slice(0, 50); 
   };
 
   useEffect(() => {
-    const randomized = randomizeQuestions();
-    setQuestions(randomized);  
-    setQuestion(randomized[0]); 
+    const randomized = shuffleQuestions();
+    setQuizQuestions(randomized);  
+    setCurrentQuestion(randomized[0]); 
   }, []); 
 
-  const checkAns = (e, ans) => {
-    if (!lock) {
-      if (question.ans === ans) {
-        e.target.classList.add('correct');
-        setLock(true);
-        setScore(prev => prev + 1);
+  const handleAnswerCheck = (e, selectedOption) => {
+    if (!isLocked) {
+      if (currentQuestion.ans === selectedOption) {
+        e.target.classList.add('correct-answer');
+        setIsLocked(true);
+        setQuizScore((prev) => prev + 1);
       } else {
-        e.target.classList.add('wrong');
-        setLock(true);
-        option_array[question.ans - 1].current.classList.add('correct');
+        e.target.classList.add('wrong-answer');
+        setIsLocked(true);
+        optionsRefs[currentQuestion.ans - 1].current.classList.add('correct-answer');
       }
     }
   };
 
-  const next = () => {
-    if (lock) {
-      if (index === questions.length - 1) {
-        setResult(true);
+  const goToNextQuestion = () => {
+    if (isLocked) {
+      if (currentQuestionIndex === quizQuestions.length - 1) {
+        setShowResult(true);
         return;
       }
-      setIndex(prevIndex => prevIndex + 1);
-      setQuestion(questions[index + 1]); 
-      setLock(false);
-      option_array.map((option) => {
-        option.current.classList.remove('wrong');
-        option.current.classList.remove('correct');
-        return null;
+      setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+      setCurrentQuestion(quizQuestions[currentQuestionIndex + 1]); 
+      setIsLocked(false);
+      optionsRefs.forEach((option) => {
+        option.current.classList.remove('wrong-answer');
+        option.current.classList.remove('correct-answer');
       });
     }
   };
 
-  const reset = () => {
-    const randomized = randomizeQuestions(); 
-    setIndex(0);
-    setQuestions(randomized); 
-    setQuestion(randomized[0]); 
-    setScore(0);
-    setLock(false);
-    setResult(false);
+  const restartQuiz = () => {
+    const randomized = shuffleQuestions(); 
+    setCurrentQuestionIndex(0);
+    setQuizQuestions(randomized); 
+    setCurrentQuestion(randomized[0]); 
+    setQuizScore(0);
+    setIsLocked(false);
+    setShowResult(false);
   };
 
   return (
-    <div className='container'>
+    <div className='quiz-wrapper'>
+      <div className="background-images-wrapper">
+         <img src="/src/assets/first.png" alt="Background 1" className="background-image first-image" />
+         <img src="/src/assets/second.png" alt="Background 2" className="background-image second-image" />
+     </div>
+     <div className="background-5">
+         <img src="/src/assets/5th.png" alt="Background 5" className="background-city" />
+     </div>
       <Link to="/">
-        <button className="home-btn">Go to Home</button>
+        <button className="home-button">Go to Home</button>
       </Link>
-      <h1>CSS Quiz</h1>
+      <h5>CSS Quiz</h5>
       <hr />
-      {!result ? (
+      {!showResult ? (
         <>
-          <h2>{index + 1}. {question?.question}</h2>
-          <ul>
-            <li ref={Option1} onClick={(e) => checkAns(e, 1)}>{question?.option1}</li>
-            <li ref={Option2} onClick={(e) => checkAns(e, 2)}>{question?.option2}</li>
-            <li ref={Option3} onClick={(e) => checkAns(e, 3)}>{question?.option3}</li>
-            <li ref={Option4} onClick={(e) => checkAns(e, 4)}>{question?.option4}</li>
+        <div className="css-question-box">
+          <h2 className="css-question">{currentQuestionIndex + 1}. {currentQuestion?.question}</h2></div>
+          <ul className='css-options'>
+            <li className="css-option" ref={optionOneRef} onClick={(e) => handleAnswerCheck(e, 1)}>{currentQuestion?.option1}</li>
+            <li className="css-option" ref={optionTwoRef} onClick={(e) => handleAnswerCheck(e, 2)}>{currentQuestion?.option2}</li>
+            <li className="css-option" ref={optionThreeRef} onClick={(e) => handleAnswerCheck(e, 3)}>{currentQuestion?.option3}</li>
+            <li className="css-option" ref={optionFourRef} onClick={(e) => handleAnswerCheck(e, 4)}>{currentQuestion?.option4}</li>
           </ul>
-          <button onClick={next}>Next</button>
-          <div className='index'>{index + 1} of {questions.length} questions</div>
+          <button onClick={goToNextQuestion} className='next-button'>Next</button>
+          <div className='question-counter'>{currentQuestionIndex + 1} of {quizQuestions.length} questions</div>
         </>
       ) : (
         <>
-          <h2>You Scored {score} out of {questions.length}</h2>
-          <button onClick={reset}>Reset</button>
+          <h5>You Scored {quizScore} out of {quizQuestions.length}</h5>
+          <button onClick={restartQuiz} className='reset-button'>Restart</button>
         </>
       )}
     </div>
