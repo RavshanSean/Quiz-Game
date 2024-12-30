@@ -11,6 +11,10 @@
     
 }
 
+body {
+    overflow: hidden;
+}
+
 h1.quiz {
     color: #0aec34;
     text-shadow: 0 0 5px #000000, 0 0 10px #037712;
@@ -100,11 +104,14 @@ h1.quiz {
     left: 5%; 
     width: 45%;
     height: 40%; 
-    background: url('../../assets/tata.webp') no-repeat center center / cover;
+    background: url('../../assets/11.jpeg') no-repeat center center / cover;
     box-shadow: 0 0 5px #04ee27, 0 0 10px #02ff34; 
     z-index: 1;
     border-radius: 40px;
 }
+
+
+
 
 .container .heart {
     position: absolute;
@@ -254,6 +261,7 @@ h1.quiz {
 @media screen and (min-width: 1400px) {
     .container {
         width: 30%;
-        max-width: 1200px;
+        max-width: 1000px;
     }
+    
 }

@@ -1,0 +1,248 @@
+
+.app-lang-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #ffe6f0;
+    font-family: 'Doto', sans-serif;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+
+
+.npc-dialogue-container {
+    position: absolute;
+    bottom: 300px; 
+    left: 53%;
+    transform: translateX(-50%);
+    max-width: 80%;
+    font-family: 'Doto', sans-serif;
+    
+  }
+  
+  .npc-dialogue-box {
+    position: relative; 
+    background-color: rgb(251, 41, 164);
+    color: #fcfcfc;
+    border-radius: 10px;
+    padding: 10px 20px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+    margin: 10px auto; 
+    border: 2px solid rgb(255, 57, 90);
+  }
+  
+  .npc-message {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+  .npc-dialogue-box::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; 
+    left: 20%; 
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 10px; 
+    border-color: rgb(251, 41, 164) transparent transparent transparent;
+}
+  
+
+
+
+
+.app-lang-title {
+    font-size: 2.5rem;
+    color: #ff66cc;
+    text-shadow: 2px 2px #ff99cc;
+    margin-bottom: 10px;
+}
+
+.app-lang-divider {
+    width: 60%;
+    border: 2px dashed #ff99cc;
+    margin-bottom: 20px;
+}
+
+
+
+
+.app-lang-home-btn {
+    font-size: 1.2rem;
+    color: white;
+    background-color: #ff66cc;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    position: relative;
+    left: 370%;
+    bottom: 210px;
+
+
+
+}
+
+.app-lang-home-btn:hover {
+    transform: scale(1.1);
+    background-color: #ff99cc;
+}
+.app-lang-question-box {
+    background-color: #ffccf2;
+    border: 3px solid #ff66cc;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: left;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    left: 43%;
+    transform: translateX(-50%);
+    margin-top: 4%;
+}
+
+
+.app-lang-question {
+    font-size: 1.5rem;
+    color: #cc0099;
+}
+
+
+.app-lang-options {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    width: 20%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    position: relative;
+    left: 17%;
+    
+}
+
+.npc-container {
+    position: absolute;
+    bottom: 150px; 
+    right: 50%;
+    border: 5px solid rgb(245, 85, 112);
+    border-radius: 10px;
+    background-color: #771155;
+    
+}
+
+.npc-gif {
+    border-radius: 10px;
+}
+
+
+.app-lang-option {
+    background-color: #ffccf2;
+    border: 3px solid #ff66cc;
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 10px;
+    text-align: left;
+    font-size: 1.5rem;
+    color: #cc0099;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%;
+    position: relative;
+    font-weight: 700;
+   
+    
+}
+
+.app-lang-option:hover {
+    background-color: #ffccf2;
+    transform: scale(1.05);
+}
+
+
+.app-lang-correct {
+    background-color: #b3ffcc !important;
+    border-color: #66ff99 !important;
+}
+
+.app-lang-wrong {
+    background-color: #ff9999 !important;
+    border-color: #ff6666 !important;
+}
+
+
+.app-lang-next-btn {
+    font-size: 1.2rem;
+    color: white;
+    background-color: #ff66cc;
+    border: none;
+    border-radius: 10px;
+    padding: 13px 50px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    position: relative;
+    left: 37%;
+    bottom: 250px;
+    
+
+}
+
+.app-lang-next-btn:hover {
+    
+    transform: scale(1.1);
+    background-color: #ff99cc;
+}
+
+
+.app-lang-result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff0f5;
+    border: 5px solid #ff66cc;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.app-lang-index {
+    font-size: 1.8rem;
+    color: #d2029e;
+    margin-bottom: 25px;
+    position: relative;
+    left: 28%;
+    transform: translateX(-50%); 
+    bottom: 120px;
+    font-weight: 700;
+    
+   
+}
+
+.app-lang-reset-btn {
+    font-size: 1.2rem;
+    color: white;
+    background-color: #ff66cc;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.app-lang-reset-btn:hover {
+    transform: scale(1.1);
+    background-color: #ff99cc;
+}
+
+
+
