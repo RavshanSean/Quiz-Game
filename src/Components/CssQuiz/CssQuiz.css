@@ -66,7 +66,7 @@ body {
     right: 65%;
     width: 20%;
     object-fit: fit;
-    filter: drop-shadow(1px 1px 30px rgb(0, 0, 0));
+    filter: drop-shadow(0 0 10px rgb(1, 289, 245));
    
 }
 
@@ -85,7 +85,7 @@ body {
     right: 0;
     bottom: 0;
     z-index: -2;
-    filter: drop-shadow(2px 2px 30px rgb(0, 0, 0));
+    filter: drop-shadow(2px 2px 30px rgb(255, 255, 255));
 }
 
 
@@ -149,7 +149,7 @@ body {
 
 
 .css-question-box {
-    background-color: #1a1a1a;
+    background-color: #000000;
     border: 3px solid #ff00cc;
     border-radius: 10px;
     padding: 15px;
@@ -350,13 +350,55 @@ body {
 
 .robot-container {
     position: relative;
-    top: -10px;  /* Move the robot up */
-    left: 20px;  /* Move the robot to the right */
-    transform: scale(1.2);  /* Make the robot a bit bigger */
-    z-index: 10;  /* Ensure it stays above other elements without interfering */
+    top: -10px;  
+    left: 20px;  
+    transform: scale(1.2);  
+    z-index: 10; 
 }
 
 .robot-gif {
-    width: 10%;  /* Ensure the gif scales properly */
-    pointer-events: none;  /* Prevent the robot from catching mouse events if not interactive */
+    width: 10%; 
+    pointer-events: none; 
 }
+
+
+.robot-dialogue-container {
+    position: absolute;
+    bottom: 25%;
+    left: 37%;
+    width: 20%;
+    padding: 10px;
+    z-index: 10;
+  }
+  
+  .robot-dialogue-box {
+    background: black; 
+    border: 2px solid #00ffcc; 
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ffcc; 
+    padding: 15px;
+    animation: bounceLeftRight2 10s ease-in-out infinite;
+  }
+  
+  .robot-message {
+    font-family: Doto, sans-serif; 
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .robot-dialogue-box::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; 
+    left: 20px; 
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 10px; 
+    border-color: black transparent transparent transparent;
+   
+  }
+  
+  

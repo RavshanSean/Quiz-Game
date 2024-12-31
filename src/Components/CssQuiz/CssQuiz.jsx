@@ -3,6 +3,7 @@ import './CssQuiz.css';
 import { cssQuizData } from '../../assets/cssQuizData';
 import { Link } from 'react-router-dom'; 
 import Weather from '../../assets/weather'; 
+import RobotDialogue from '../../assets/RobotDialogue'; 
 
 const CssQuiz = () => {
   let [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -75,6 +76,7 @@ const CssQuiz = () => {
     <div className='quiz-wrapper'>
       <div className="background-images-wrapper">
             <img src="src/assets/robot.gif" alt="Background 3" className="background-image3 tird-image" />
+            <RobotDialogue /> 
          <img src="/src/assets/first.png" alt="Background 1" className="background-image first-image" />
          <img src="/src/assets/second.png" alt="Background 2" className="background-image second-image" />
      </div>
