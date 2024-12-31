@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import './CssQuiz.css';
 import { cssQuizData } from '../../assets/cssQuizData';
 import { Link } from 'react-router-dom'; 
+import Weather from '../../assets/weather'; 
 
 const CssQuiz = () => {
   let [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -70,6 +71,7 @@ const CssQuiz = () => {
   };
 
   return (
+    
     <div className='quiz-wrapper'>
       <div className="background-images-wrapper">
          <img src="/src/assets/first.png" alt="Background 1" className="background-image first-image" />
@@ -78,10 +80,11 @@ const CssQuiz = () => {
      <div className="background-5">
          <img src="/src/assets/5th.png" alt="Background 5" className="background-city" />
      </div>
+     <h6 className="css-quiz"><Weather /></h6>
       <Link to="/">
-        <button className="home-button">Go to Home</button>
+        <button className="home-button">Home</button>
       </Link>
-      <h5>CSS Quiz</h5>
+      <h5>CSS </h5>
       <hr />
       {!showResult ? (
         <>
@@ -98,7 +101,8 @@ const CssQuiz = () => {
         </>
       ) : (
         <>
-          <h5>You Scored {quizScore} out of {quizQuestions.length}</h5>
+        <div className='css-score2'><h5 className='score1'>You Scored {quizScore} out of {quizQuestions.length}</h5></div>
+     
           <button onClick={restartQuiz} className='reset-button'>Restart</button>
         </>
       )}

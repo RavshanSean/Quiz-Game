@@ -14,12 +14,24 @@
 }
 
 body {
-    background: url('/src/assets/third.gif') no-repeat center center fixed;
-    
-    background-size: cover;
     height: 100vh;
     margin: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: changeBackground2 25s infinite;
+    overflow: hidden;
   }
+  
+  @keyframes changeBackground2 {
+    0% { background-image: url('/src/assets/image1.gif'); }
+    20% { background-image: url('/src/assets/image2.gif'); }
+    40% { background-image: url('/src/assets/image3.gif'); }
+    60% { background-image: url('/src/assets/image4.gif'); }
+    80% { background-image: url('/src/assets/image5.gif'); }
+    100% { background-image: url('/src/assets/image1.gif'); } 
+  }
+  
 
 
 .background-image {
@@ -134,13 +146,29 @@ body {
     left: 40%;
     transform: translateX(-50%);
     margin-top: 4%;
+    animation: bounceLeftRight 3s ease-in-out infinite;
 }
+
+
+@keyframes bounceLeftRight {
+    0% {
+        transform: translateX(-60%); 
+    }
+    50% {
+        transform: translateX(-55%); 
+    }
+    100% {
+        transform: translateX(-60%); 
+    }
+}
+
+
+
 
 .css-question {
     font-size: 1.5rem;
     color: #f85ef8; 
     font-family: 'Doto', sans-serif;
-   
     letter-spacing: 1px;
 }
 
@@ -185,4 +213,122 @@ body {
 .wrong-answer {
     background-color: #fa013f !important;
     border-color: #ff0066 !important;
+}
+
+.home-button, .next-button {
+    background-color: black;
+    border: 3px solid #ff00cc;
+    color: #f5eef5;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+    display: inline-block;
+    font-family: 'Doto';
+}
+
+.home-button:hover, .next-button:hover {
+    background-color: #f904c8;
+    color: #121112;
+    transform: scale(1.1);
+}
+
+.reset-button {
+    background-color: #ff00cc;
+    border: 3px solid #f85ef8;
+    color: #121112;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.reset-button:hover {
+    background-color: #f85ef8;
+    color: #121112;
+    transform: scale(1.1);
+}
+
+
+.home-button {
+    position: absolute;
+    top: 12%;
+    left: 75%;
+    animation: bounceLeftRight3 3s ease-in-out infinite;
+   
+}
+
+.next-button {
+    position: relative;
+    left: 75%;
+    animation: bounceLeftRight3 3s ease-in-out infinite;
+    
+}
+
+@keyframes bounceLeftRight3 {
+    0% {
+        transform: translateX(-70%); 
+    }
+    50% {
+        transform: translateX(-55%); 
+    }
+    100% {
+        transform: translateX(-70%); 
+    }
+}
+
+
+.css-quiz {
+    position: fixed;
+    bottom: 60%;
+    left: 22%;
+    z-index: 999;
+    color: #ff00cc;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    background-color: black;
+    padding: 5px 10px;
+    border: 2px solid #ff00cc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #ff00cc;
+    pointer-events: none;
+    animation: bounceLeftRight 3s ease-in-out infinite;
+}
+
+.question-counter {
+    position: fixed;
+    bottom: 47%;
+    left: 32%;
+    z-index: 1000;
+    color: #ff00cc;
+    font-family: Doto, sans-serif;
+    font-size: 20px; 
+    background-color: black;
+    padding: 15px 30px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #ff00cc;
+    border: 2px solid #ff00cc;
+    font-weight: 900;
+    animation: bounceLeftRight2 3s ease-in-out infinite;
+
+}
+
+@keyframes bounceLeftRight2 {
+    0% {
+        transform: translateX(-65%); 
+    }
+    50% {
+        transform: translateX(-55%); 
+    }
+    100% {
+        transform: translateX(-65%); 
+    }
 }
