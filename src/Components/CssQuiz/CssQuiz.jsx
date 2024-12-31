@@ -74,6 +74,7 @@ const CssQuiz = () => {
     
     <div className='quiz-wrapper'>
       <div className="background-images-wrapper">
+            <img src="src/assets/robot.gif" alt="Background 3" className="background-image3 tird-image" />
          <img src="/src/assets/first.png" alt="Background 1" className="background-image first-image" />
          <img src="/src/assets/second.png" alt="Background 2" className="background-image second-image" />
      </div>
@@ -84,8 +85,6 @@ const CssQuiz = () => {
       <Link to="/">
         <button className="home-button">Home</button>
       </Link>
-      <h5>CSS </h5>
-      <hr />
       {!showResult ? (
         <>
         <div className="css-question-box">
@@ -101,7 +100,7 @@ const CssQuiz = () => {
         </>
       ) : (
         <>
-        <div className='css-score2'><h5 className='score1'>You Scored {quizScore} out of {quizQuestions.length}</h5></div>
+        <div><h5>You Scored {quizScore} out of {quizQuestions.length}</h5></div>
      
           <button onClick={restartQuiz} className='reset-button'>Restart</button>
         </>

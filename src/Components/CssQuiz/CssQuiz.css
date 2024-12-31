@@ -48,7 +48,7 @@ body {
     width: 50%;
     z-index: -1;
     object-fit: fit;
-    filter: drop-shadow(1px 1px 20px rgb(247, 81, 108));
+    filter: drop-shadow(1px 1px 30px rgb(0, 0, 0));
     animation: firstImageMovement 15s ease-in-out infinite; 
 }
 
@@ -58,10 +58,25 @@ body {
     width: 50%;
     z-index: -1;
     object-fit: fit;
-    filter: drop-shadow(1px 1px 20px rgb(244, 94, 119));
+    filter: drop-shadow(1px 1px 30px rgb(0, 0, 0));
     animation: secondImageMovement 15s ease-in-out infinite; 
 }
 
+.tird-image {
+    right: 65%;
+    width: 20%;
+    object-fit: fit;
+    filter: drop-shadow(1px 1px 30px rgb(0, 0, 0));
+   
+}
+
+.background-image3 {
+    position: absolute;
+    top: 75%;
+    height: 30%;
+    width: auto;
+    animation: moveBackground 10s ease-in-out infinite;
+}
 
 .background-5 {
     position: absolute;
@@ -70,7 +85,7 @@ body {
     right: 0;
     bottom: 0;
     z-index: -2;
-    filter: drop-shadow(1px 1px 20px rgb(58, 4, 235));
+    filter: drop-shadow(2px 2px 30px rgb(0, 0, 0));
 }
 
 
@@ -291,7 +306,7 @@ body {
     bottom: 60%;
     left: 22%;
     z-index: 999;
-    color: #ff00cc;
+    color: #ffffff;
     font-family: 'Courier New', Courier, monospace;
     font-size: 14px;
     background-color: black;
@@ -308,7 +323,7 @@ body {
     bottom: 47%;
     left: 32%;
     z-index: 1000;
-    color: #ff00cc;
+    color: #ffffff;
     font-family: Doto, sans-serif;
     font-size: 20px; 
     background-color: black;
@@ -331,4 +346,17 @@ body {
     100% {
         transform: translateX(-65%); 
     }
+}
+
+.robot-container {
+    position: relative;
+    top: -10px;  /* Move the robot up */
+    left: 20px;  /* Move the robot to the right */
+    transform: scale(1.2);  /* Make the robot a bit bigger */
+    z-index: 10;  /* Ensure it stays above other elements without interfering */
+}
+
+.robot-gif {
+    width: 10%;  /* Ensure the gif scales properly */
+    pointer-events: none;  /* Prevent the robot from catching mouse events if not interactive */
 }
