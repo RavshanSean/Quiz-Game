@@ -1,0 +1,439 @@
+.html-quiz-wrapper {
+    background: url('src/assets/html-quiz.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh; 
+    
+  }
+
+
+  .anime-gif {
+    position: absolute;
+    width: 50%; 
+    height: 10%; 
+    background-size: contain; 
+    background-repeat: no-repeat;
+    z-index: 7; 
+
+  }
+  
+
+  .anime3 {  /* keep inoske */
+    background-image: url('src/assets/anime3.gif');
+    top: 85%;
+    left: 55%;
+    z-index: 9;
+    animation: moveRightToLeft1 15s linear infinite;
+    filter: drop-shadow(1px 1px 30px rgb(0, 0, 0));
+  }
+
+  @keyframes moveRightToLeft1 {
+    0% {
+      left: 100%; 
+    }
+    100% {
+      left: -70px; 
+    }
+  }
+  
+  .anime11 {  /* keep nezuko */
+    background-image: url('src/assets/anime11.gif');
+    top: 90%;
+    left: 40%;
+    z-index: 10;
+    animation: moveRightToLeft 15s linear infinite;
+    filter: drop-shadow(1px 1px 30px rgb(0, 0, 0));
+    
+  }
+
+  .comic-nezuko {
+    position: absolute;
+    top: 75%; 
+    left: 75%;  
+    
+    background-color: #000000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Doto';
+    font-weight: 900; 
+    font-size: 18px;
+    color: #ffffff;
+    box-shadow: 0px 0px 10px rgb(1, 255, 242);
+    transform: translateX(-50%);
+    animation: moveRightToLeft 15s linear infinite;
+  }
+  
+  .comic-nezuko::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 80%;
+    margin-left: -10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #0b0b0b; 
+  }
+
+  .comic-nezuko::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 25%;
+    margin-left: -10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #0b0b0b; 
+  }
+
+  @keyframes moveRightToLeft {
+    0% {
+      left: 110%;
+    }
+    100% {
+      left: -70px; 
+    }
+  }
+  
+  
+  .anime5 {  /* keep avatar */
+    background-image: url('src/assets/anime5.gif');
+    top: 42%;
+    left: 75%;
+    z-index: 6; 
+    width: 15%;
+    height: 10%;
+    
+  }
+
+  .comic-avatar {
+    position: absolute;
+    top: 35%; 
+    left: 77%;  
+    z-index: 5;
+    background-color: #000000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Doto';
+    font-weight: 900; 
+    font-size: 18px;
+    color: #ffffff;
+    box-shadow: 0px 0px 10px rgb(1, 255, 242);
+    transform: translateX(-50%);
+  }
+  
+  .comic-avatar::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 70%;
+    margin-left: -10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #0b0b0b; 
+  }
+  
+  .anime6 {  /* keep jojo */
+    background-image: url('src/assets/anime6.gif');
+    top: 50%;
+    left: 10%;
+    z-index: 6;
+    width: 15%;
+    height: 20%;
+    filter: drop-shadow(1px 1px 30px rgb(0, 0, 0));
+  }
+
+  .comic-jojo {
+    position: absolute;
+    top: 45%;  
+    left: 10%;  
+    z-index: 5;
+    background-color: #000000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Doto';
+    font-weight: 900; 
+    font-size: 18px;
+    color: #ffffff;
+    box-shadow: 0px 0px 10px rgb(158, 1, 255);
+    transform: translateX(-50%);
+  }
+  
+  .comic-jojo::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 80%;
+    margin-left: -10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #0b0b0b; 
+  }
+  
+  .anime7 {  /* keep Goku*/
+    background-image: url('src/assets/anime7.gif');
+    top: 50%;
+    left: 25%;
+    z-index: 7;
+    width: 20%;
+    height: 20%;
+    filter: drop-shadow(1px 1px 30px rgb(0, 0, 0));
+  }
+
+  .comic-goku {
+    position: absolute;
+    top: 45%;  
+    left: 32%;  
+    z-index: 5;
+    background-color: #000000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Doto';
+    font-weight: 900;
+    font-size: 18px;
+    color: #ffffff;
+    box-shadow: 0px 0px 10px rgb(32, 63, 61);
+    transform: translateX(-50%);
+  }
+  
+  .comic-goku::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 20%;
+    margin-left: -10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #0b0b0b; 
+  }
+  
+  .anime9 { /* keep jiji */
+    background-image: url('src/assets/anime9.gif');
+    top: 40%;
+    left: 85%;
+    z-index: 4;
+    width: 20%;
+    height: 12%;
+    filter: drop-shadow(1px 1px 30px rgb(0, 0, 0));
+   
+  }
+
+  .comic-box {
+    position: absolute;
+    top: 30%;  
+    left: 90%;  
+    z-index: 5;
+    background-color: #000000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Doto';
+    font-weight: 900;
+    font-size: 18px;
+    color: #ffffff;
+    box-shadow: 0px 0px 10px #d682fa;
+    transform: translateX(-50%);
+  }
+  
+  .comic-box::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 30%;
+    margin-left: -10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #0b0b0b; 
+  }
+  
+  
+  .anime10 { /* keep naruto vs sasuke */
+    background-image: url('src/assets/anime10.gif');
+    top: 22%;
+    left: 10%;
+    z-index: 3;
+  }
+  
+  .comic-naruto {
+    position: absolute;
+    top: 18%;  
+    left: 15%;  
+    z-index: 5;
+    background-color: #000000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Doto';
+    font-weight: 900;
+    font-size: 10px;
+    color: #ffffff;
+    box-shadow: 0px 0px 10px rgb(255, 43, 1);
+    transform: translateX(-50%);
+  }
+  
+  .comic-naruto::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 80%;
+    margin-left: -10px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #0b0b0b;
+  }
+
+  .comic-sasuke {
+    position: absolute;
+    top: 18%;  
+    left: 25%;  
+    z-index: 5;
+    background-color: #000000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Doto';
+    font-weight: 900; 
+    font-size: 10px;
+    color: #ffffff;
+    box-shadow: 0px 0px 10px rgb(1, 255, 242);
+    transform: translateX(-50%);
+  }
+  
+  .comic-sasuke::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 20%;
+    margin-left: -10px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #0b0b0b; 
+  }
+
+  .question-box {
+    background-color: #ffffff;
+    border: 3px solid #676466;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: left;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 300px;
+    position: relative;
+    left: 45%;
+    transform: translateX(-50%);
+    margin-top: 2%;
+}
+
+
+.box-question {
+    font-size: 1.2rem;
+    color: #030303;
+    font-weight: 900;
+}
+
+.options {
+    list-style: none;
+    padding: 0;
+    width: 20%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    position: relative;
+    left: 45%;
+    top: 50px;
+    z-index: 3;
+    
+}
+
+.option {
+    background-color: #ffffff;
+    border: 3px solid #000000;
+    border-radius: 8px;
+    text-align: left;
+    color: #000000;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%;
+    position: relative;
+    font-weight: 900;
+    font-size: 1.0rem;
+    
+   
+    
+}
+
+.option:hover {
+    transform: scale(1.1);
+}
+
+
+.app-lang-correct {
+    background-color: #b3ffcc !important;
+    border-color: #66ff99 !important;
+}
+
+.app-lang-wrong {
+    background-color: #f90000 !important;
+    border-color: #ff0000 !important;
+}
+
+
+
+.homeButton {
+   position: relative;
+    top: 100px; 
+    left: 68%; 
+    background-color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #000000;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 3px solid #fa7bd6;
+    font-family: 'Doto';
+    font-weight: 900;
+  
+}
+
+.nexButton {
+    position: relative;
+    top: 100px;
+    left: 52%; 
+    background-color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #000000;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 3px solid #87fa9e;
+    font-family: 'Doto';
+    font-weight: 900;
+}
+
+.homeButton:hover {
+    transform: scale(1.1);
+   
+  }
+
+.nexButton:hover {
+    transform: scale(1.1);
+    
+  }
+  
+  

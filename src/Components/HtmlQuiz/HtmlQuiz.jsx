@@ -71,33 +71,54 @@ const HtmlQuiz = () => {
   };
 
   return (
-    <div className='container'>
-      <Link to="/">
-        <button className="home-btn">Go to Home</button>
-      </Link>
-      
-      <h1>HTML Quiz</h1>
-      <hr />
-      {!result ? (
-        <>
-          <h2>{index + 1}. {question?.question}</h2>
-          <ul>
-            <li ref={Option1} onClick={(e) => checkAns(e, 1)}>{question?.option1}</li>
-            <li ref={Option2} onClick={(e) => checkAns(e, 2)}>{question?.option2}</li>
-            <li ref={Option3} onClick={(e) => checkAns(e, 3)}>{question?.option3}</li>
-            <li ref={Option4} onClick={(e) => checkAns(e, 4)}>{question?.option4}</li>
-          </ul>
-          <button onClick={next}>Next</button>
-          <div className='index'>{index + 1} of {questions.length} questions</div>
-        </>
-      ) : (
-        <>
-          <h2>You Scored {score} out of {questions.length}</h2>
-          <button onClick={reset}>Reset</button>
-        </>
-      )}
+    <div className="html-quiz-wrapper">
+      <div className='boxy'>
+
+        <div className="anime-gif anime3"></div>
+        <div className="anime-gif anime11"></div>
+        <div className="comic-nezuko">Im faster!</div>
+        <div className="anime-gif anime5"></div>
+        <div className="comic-avatar">He He He!</div>
+        <div className="anime-gif anime6"></div>
+        <div className="comic-jojo">Ora Ora Ora!!</div>
+        <div className="anime-gif anime7"></div>
+        <div className="comic-goku">Im gonna win!</div>
+        <div className="anime-gif anime9"></div>
+        <div className="comic-box">You so cool!</div>
+        <div className="anime-gif anime10"></div>
+        <div className="comic-naruto">SASUKEEE!</div>
+        <div className="comic-sasuke">NARUTOOO!</div>
+
+
+        <div className="button-container">
+        <Link to="/">
+          <button className="homeButton">Home</button>
+        </Link>
+          <button className='nexButton' onClick={next}>Next</button></div>
+  
+        {!result ? (
+          <>
+          <div className="question-box">
+            <h6 className="box-question">{index + 1}. {question?.question}</h6></div>
+            <ul className="options">
+              <li className="option" ref={Option1} onClick={(e) => checkAns(e, 1)}>{question?.option1}</li>
+              <li className="option" ref={Option2} onClick={(e) => checkAns(e, 2)}>{question?.option2}</li>
+              <li className="option" ref={Option3} onClick={(e) => checkAns(e, 3)}>{question?.option3}</li>
+              <li className="option" ref={Option4} onClick={(e) => checkAns(e, 4)}>{question?.option4}</li>
+            </ul>
+  
+            <div className='dex'>{index + 1} of {questions.length} questions</div>
+          </>
+        ) : (
+          <>
+          
+            <h6>You Scored {score} out of {questions.length}</h6>
+            <button onClick={reset}>Reset</button>
+          </>
+        )}
+      </div>
     </div>
-  );
+  );  
 };
 
 export default HtmlQuiz;
