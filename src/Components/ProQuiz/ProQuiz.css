@@ -13,27 +13,6 @@
     overflow: hidden; 
 }
 
-body {
-    height: 100vh;
-    margin: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    animation: changeBackground2 25s infinite;
-    overflow: hidden;
-  }
-  
-  @keyframes changeBackground2 {
-    0% { background-image: url('/src/assets/image1.gif'); }
-    20% { background-image: url('/src/assets/image2.gif'); }
-    40% { background-image: url('/src/assets/image3.gif'); }
-    60% { background-image: url('/src/assets/image4.gif'); }
-    80% { background-image: url('/src/assets/image5.gif'); }
-    100% { background-image: url('/src/assets/image1.gif'); } 
-  }
-  
-
-
 .background-image {
     position: absolute;
     bottom: 0;
@@ -275,8 +254,8 @@ body {
 
 .home-button {
     position: absolute;
-    top: 12%;
-    left: 75%;
+    top: 30%;
+    left: 45%;
     animation: bounceLeftRight3 3s ease-in-out infinite;
    
 }

@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
-import './CssQuiz.css';
-import { cssQuizData } from '../../assets/cssQuizData';
+import './ProQuiz.css';
+import { proQuizData } from '../../assets/proQuizData';
 import { Link } from 'react-router-dom'; 
 import Weather from '../../assets/weather'; 
 import RobotDialogue from '../../assets/RobotDialogue'; 
@@ -21,7 +21,7 @@ const CssQuiz = () => {
   let optionsRefs = [optionOneRef, optionTwoRef, optionThreeRef, optionFourRef];
 
   const shuffleQuestions = () => {
-    const shuffled = [...cssQuizData].sort(() => Math.random() - 0.5); 
+    const shuffled = [...proQuizData].sort(() => Math.random() - 0.5); 
     return shuffled.slice(0, 50); 
   };
 

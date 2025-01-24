@@ -32,6 +32,8 @@ const AppLanguagesQuiz = () => {
     setQuestion(randomized[0]);
   }, []);
 
+  
+
   const checkAns = (e, ans) => {
     if (!lock) {
       if (question.ans === ans) {
