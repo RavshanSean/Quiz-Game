@@ -31,7 +31,7 @@ body::after {
   min-height: 100vh;
   padding-left: 10px;
   z-index: 2;
-  background-image: url(src/assets/pic.jpg);
+  background-color: #000000;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -43,16 +43,16 @@ h1, .text {
   text-transform: uppercase;
   text-shadow: 0 0 5px #e1dada, 0 0 10px #666565;
   margin: 5%;
-  margin-left: 5%;
+  margin-left: 30%;
 }
 
 .button-container {
   display: flex;
   flex-wrap: wrap; 
-  gap: 20px; 
+  gap: 50px; 
   justify-content: center; 
   align-items: center;
-  margin: 200px 0;
+  margin: 100px 0;
   width: 100%;
  
 }
@@ -61,32 +61,23 @@ h1, .text {
   background: rgb(65, 248, 111);
   color: #000000;
   border: 2px solid #00ff00;
-  padding: 20px 40px;
-  font-size: 1rem;
+  padding: 120px;
+  font-size: 2rem;
   cursor: pointer;
   text-transform: uppercase;
   box-shadow: 0 0 10px #00ff00;
   font-family: 'Doto', sans-serif;
   border-radius: 20px;
-  min-width: 250px;
   text-align: center;
+  font-weight: 700;
   
 }
 
 .button:hover {
-  background-color: #bff9bf;
+  background-color: #ffffff;
   color: rgb(24, 28, 25);
   box-shadow: 0 0 15px #bbf3bb;
 }
 
-.bottom-right-gif {
-  position: fixed;
-  top: 10%;
-  right: 8%;
-  width: 10%;
-  height: auto;
-  z-index: 10;
-  border-radius: 20px;
-  box-shadow: 0 0 10px #20fe03;
-}
+
 

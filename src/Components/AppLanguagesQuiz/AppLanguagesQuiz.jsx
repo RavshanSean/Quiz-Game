@@ -130,7 +130,7 @@ const AppLanguagesQuiz = () => {
             Next
           </button>
           <Link to="/">
-            <button className="app-lang-home-btn">Go to Home</button>
+            <button className="app-lang-home-btn">Home</button>
           </Link>
           <div className="app-lang-index">
             {index + 1} of {questions.length} questions
