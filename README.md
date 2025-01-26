@@ -1,8 +1,10 @@
-# React + Vite
+# Quiz For Developers 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the Developer Quiz! In this interactive mini-project, you'll have the opportunity to challenge yourself and test your development skills. Ready to put your knowledge to the test?
 
-Currently, two official plugins are available:
+# Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+For this project, we utilized React to build the user interface and integrated APIs for weather updates and the current time clock functionality, providing a dynamic and engaging experience.
+
+![Quiz Screenshot](/Screenshot%202.png)
+![Quiz Screenshot](/Screenshot%203.png)
